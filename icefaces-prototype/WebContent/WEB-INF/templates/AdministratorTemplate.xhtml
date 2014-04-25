@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ace="http://www.icefaces.org/icefaces/components"
+	xmlns:icecore="http://www.icefaces.org/icefaces/core">
+<h:head>
+	<title>#{title}</title>
+	<link rel="stylesheet" type="text/css"
+		href="./resources/css/template.css" />
+
+	<!-- refreshing page every 15 min to redirect to login page when session timeout -->
+	<!-- @author tmohamed -->
+	<!-- 
+	<meta http-equiv="refresh" content="10" />
+	 -->
+</h:head>
+<h:body>
+	<div class="header" align="center">
+		<ui:insert name="header">#{pageName}</ui:insert>
+	</div>
+
+	<hr />
+
+	<table cellspacing="10px">
+		<tr>
+			<td width="10%" style="vertical-align: top;">
+				<div>
+					<h:form id="MenuFormID">
+						<ace:panel>
+							<h:panelGrid columns="1" width="100%">
+								<h:commandLink value="Home" styleClass="menuBarItem" />
+								<h:commandLink value="Offices" styleClass="menuBarItem" />
+								<h:commandLink value="Employees" styleClass="menuBarItem" />
+								<h:commandLink value="Sales" styleClass="menuBarItem" />
+								<h:commandLink value="Payroll" styleClass="menuBarItem" />
+							</h:panelGrid>
+						</ace:panel>
+					</h:form>
+				</div>
+			</td>
+
+			<td width="90%" style="vertical-align: top;">
+				<div class="contentBody">
+					<ui:insert name="content" />
+				</div>
+			</td>
+		</tr>
+	</table>
+</h:body>
+</html>

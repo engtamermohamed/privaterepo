@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+      "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+      "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd" >
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/test?autoReconnect=true&amp;characterEncoding=utf-8</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- SQL dialect -->
+		<property name="hibernate.dialect">com.mohamed.tamer.hibernate.util.Mysql5Dialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider
+		</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<!-- 
+		<property name="hbm2ddl.auto">update</property>
+		 -->
+		 
+		<mapping class="com.mohamed.tamer.hibernate.model.Product"/>
+		<mapping class="com.mohamed.tamer.hibernate.model.Deal"/>
+		<mapping class="com.mohamed.tamer.hibernate.model.DealItem"/>
+		<mapping class="com.mohamed.tamer.hibernate.model.UiRole"/>
+		<mapping class="com.mohamed.tamer.hibernate.model.UiUser"/>
+		<mapping class="com.mohamed.tamer.hibernate.model.UiUserRole"/>
+		 
+	</session-factory>
+</hibernate-configuration>
